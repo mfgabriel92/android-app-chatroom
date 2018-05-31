@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin">
+
+    <LinearLayout
+        android:id="@+id/layout_balloon_message"
+        android:theme="@style/StyleBalloonMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/chat_message_top_bottom_padding"
+        android:paddingBottom="@dimen/chat_message_top_bottom_padding"
+        android:paddingStart="@dimen/chat_message_start_end_padding"
+        android:paddingEnd="@dimen/chat_message_start_end_padding"
+        tools:background="@drawable/balloon_shape_sending"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="18sp"
+            tools:text="Message" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            tools:text="Name" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/padding"
+    android:paddingStart="@dimen/padding"
+    android:paddingEnd="@dimen/padding"
+    tools:context="com.example.gabriel.chatroom.MainActivity">
+
+    <ListView
+        android:id="@+id/list_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_linear"
+        android:stackFromBottom="false"
+        android:divider="@android:color/transparent"
+        android:transcriptMode="alwaysScroll"
+        android:dividerHeight="@dimen/item_message_divider_height"
+        tools:listitem="@layout/item_message"/>
+
+    <LinearLayout
+        android:id="@+id/layout_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/img_photo_picker_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:drawable/ic_menu_gallery"
+            android:layout_gravity="center_vertical"
+            android:onClick="onPhotoPickerClick"/>
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="textCapSentences"
+            android:background="@drawable/rounded_edit_text"
+            android:paddingStart="@dimen/chat_message_start_end_padding"
+            android:paddingEnd="@dimen/chat_message_start_end_padding"
+            android:paddingTop="@dimen/chat_message_top_bottom_padding"
+            android:paddingBottom="@dimen/chat_message_top_bottom_padding"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:enabled="false"
+            android:text="@string/send_button_label"
+            android:background="@drawable/ic_button_send_disabled"
+            android:onClick="onSendClick"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>
